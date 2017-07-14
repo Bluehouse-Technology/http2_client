@@ -710,7 +710,7 @@ handle_ping([], 0, <<Opaque:8/binary>>, _Size, C) ->
 %%    +---------------------------------------------------------------+
 
 goaway_frame(StreamId, ErrorCode) ->
-    Payload = <<0:1, StreamId:31, ErrorCode:31>>,
+    Payload = <<0:1, StreamId:31, ErrorCode:32>>,
     make_frame(?GOAWAY, [], 0, Payload, 8).
 
 handle_goaway(_Flags, StreamId, _Msg, _Size, C) when StreamId /= 0 ->

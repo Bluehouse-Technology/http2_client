@@ -1,0 +1,11 @@
+{application, http2_client,
+        [{description, "Erlang HTTP/2 client"},
+         {vsn, "0.1.0"},
+         {registered, [http2_client_sup, http2_client]},
+         {applications, [cowlib]},
+	 {env, []},
+	 {mod, {http2_client_app, []}},
+         {maintainers, ["Willem de Jong"]},
+	 {modules, []}
+        ]
+}.
